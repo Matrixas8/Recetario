@@ -1,5 +1,6 @@
 # Recetario Interactivo
 
+## Casos de Uso
 ### Lista de recetas
     ⭕ Busqueda por 
         Ingredientes
