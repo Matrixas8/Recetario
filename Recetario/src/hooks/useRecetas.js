@@ -1,21 +1,28 @@
 import { getRecetas } from '../servicios/receta.js'
-import {useEffect, useState} from 'react'
+import { useRef, useState, useCallback} from 'react'
 
-export function useRecetas () {
+export function useRecetas ({search}) {
     const [recetas, setRecetas] = useState([])
+    const [, setError] = useState(null)
+    const [loading, setLoading] = useState(false)
 
-    useEffect(() => {
-        const getListOfRecetas = async () => {
-            try {
-                const data = await getRecetas(10)
-                setRecetas(data)
-            } catch (error) {
-                console.error('Error al obtener las recetas')
-            }
+    const previousSearch = useRef(search)
+
+    const getListOfRecetas = useCallback(async ({search}) => {
+        if (previousSearch.current === search) return
+        
+        try {
+            setLoading(true)
+            setError(null)
+            previousSearch.current = search
+            const newRecetas = await getRecetas({ search })
+            setRecetas(newRecetas)
+        } catch (error) {
+            setError(error.message)
+        } finally {
+            setLoading(false)
         }
-
-        getListOfRecetas()
     }, [])
 
-    return recetas
+    return { recetas, getListOfRecetas, loading }
 }
