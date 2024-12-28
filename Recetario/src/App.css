@@ -4,22 +4,39 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+}
+
+header {
+  max-width: 400px;
+  width: 100%;
+}
+
+header h1 {
+  text-align: center;
 }
 
 main {
   display: flex;
   justify-content: center;
   width: 100%;
+  height: 380px;
 }
 
 form {
   align-items: center;
+  white-space: nowrap;
   display: flex;
   justify-content: center;
 }
 
+form label {
+  display: line-block;
+  margin-right: 8px;
+}
+
 form input {
+  display: inline-block;
+  vertical-align: middle;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
@@ -28,6 +45,8 @@ form input {
 }
 
 form button {
+  display: inline-block;
+  vertical-align: middle;
   border: none;
   border-radius: 4px;
   color: white;
@@ -35,36 +54,6 @@ form button {
   font-size: 1rem;
   margin-left: 8px;
   padding: 8px 16px;
-}
-
-.labeled-select {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  width: 100%;
-  max-width: 300px;
-  margin: 10px auto;
-}
-
-.labeled-select label {
-  font-size: 100%;
-  margin-bottom: 4px;
-  color: #fffefe;
-}
-
-.labeled-select select {
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 1rem;
-  padding: 10px;
-  width: 100%;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  background-color: #161f27;
-}
-
-select:focus {
-  border-color: #0096bfab;
-  outline: none;
 }
 
 .recetas {

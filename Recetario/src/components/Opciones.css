@@ -1,0 +1,29 @@
+.labeled-select {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px auto;
+  }
+  
+  .labeled-select label {
+    font-size: 100%;
+    margin-bottom: 4px;
+    color: #fffefe;
+  }
+  
+  .labeled-select select {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #161f27;
+  }
+  
+  select:focus {
+    border-color: #0096bfab;
+    outline: none;
+  }
