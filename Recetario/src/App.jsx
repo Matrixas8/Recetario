@@ -2,7 +2,6 @@ import './App.css'
 
 import { Recetas } from './components/Recetas.jsx'
 import { Filters } from './components/Filters.jsx'
-import { Footer } from './components/Footer.jsx'	
 
 import { useSearch } from './hooks/useSearch.js'
 import { useRecetas } from './hooks/useRecetas.js'
@@ -52,9 +51,6 @@ function App() {
             : <Recetas recetas = {recetas}/>
         }
       </main>
-
-      <Footer />
-
     </div>
   )
 }
